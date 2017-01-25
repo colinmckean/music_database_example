@@ -34,6 +34,12 @@ class Album
     sql = "UPDATE albums SET (title, genre, artist_id) = ('#{@title}', '#{@genre}', '#{artist_id}') WHERE id = #{@id};"
     SqlRunner.run(sql)
   end
+
+  def delete_album
+    sql = "DELETE FROM albums WHERE id=#{@id}"
+    SqlRunner.run(sql)
+    
+  end
 end
 
 #List all the albums they have by an artist

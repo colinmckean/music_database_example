@@ -4,8 +4,10 @@ require_relative 'Artist'
 
 artist_1 = Artist.new('name' => 'ED SHEERAN')
 artist_2 = Artist.new({'name' => 'Beyonce'})
+artist_3 = Artist.new({'name' => 'Colin'})
 artist_1.save
 artist_2.save
+artist_3.save
 
 album_1 = Album.new({'title' => 'songs I wrote with amy', 'genre' => 'acoustic music' , 'artist_id'=> artist_1.id})
 album_2 = Album.new({'title' =>'LEMONADE', 'genre' => 'RnB', 'artist_id' =>  artist_2.id})
