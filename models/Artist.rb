@@ -35,4 +35,11 @@ class Artist
     sql = "DELETE FROM artists WHERE id=#{@id}"
     SqlRunner.run(sql)
   end
+
+  def self.find_by_id(id_to_find)
+    sql = "SELECT * FROM artists WHERE id='#{id_to_find}';"
+    artists = SqlRunner.run(sql)
+    result = artists.map { |artist| Artist.new(artist) }
+    return result
+  end
 end

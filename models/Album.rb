@@ -38,7 +38,13 @@ class Album
   def delete_album
     sql = "DELETE FROM albums WHERE id=#{@id}"
     SqlRunner.run(sql)
-    
+  end
+
+  def self.find_by_id(id_to_find)
+    sql = "SELECT * FROM albums WHERE id='#{id_to_find}'"
+    albums = SqlRunner.run(sql)
+    result = albums.map { |album| Album.new(album)  }
+    return result
   end
 end
 
