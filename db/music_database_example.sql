@@ -12,5 +12,3 @@ CREATE TABLE albums(
   genre VARCHAR(255),
   artist_id INT4 references artists(id)
 );
-
-
