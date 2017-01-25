@@ -27,4 +27,10 @@ class Artist
     return result
   end
 
+  def update_artist
+    sql = "UPDATE artists SET (name) = ('#{@name}') WHERE id = #{@id};"
+    SqlRunner.run(sql)
+    
+  end
+
 end
