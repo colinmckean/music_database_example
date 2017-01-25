@@ -28,7 +28,6 @@ class Album
     artists = SqlRunner.run(sql)
     result = artists.map { |artist| Artist.new(artist)  }
     return result
-    
   end
 end
 
